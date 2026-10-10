@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SiteSage — Chat with any website</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">🌿 <b>SiteSage</b> <span>chat with any website</span></div>
+  <div class="powered">NVIDIA Nemotron · Nebius Token Factory</div>
+</header>
+
+<main>
+  <section class="ingest card">
+    <input id="url" type="url" placeholder="Paste a URL — e.g. docs.nebius.com or a news article…" autocomplete="off">
+    <button id="loadBtn">Load page</button>
+    <span id="status" class="status"></span>
+  </section>
+
+  <div class="cols">
+    <section class="card page-info hidden" id="pageCard">
+      <h2 id="pageTitle"></h2>
+      <div class="meta"><span id="pageUrl"></span> · <span id="pageStats"></span></div>
+      <p id="pageSummary" class="summary"></p>
+      <div id="suggested" class="chips"></div>
+    </section>
+
+    <section class="card chat hidden" id="chatCard">
+      <div class="chat-head">
+        <b>Ask about this page</b>
+        <label class="mode">model
+          <select id="mode">
+            <option value="auto" selected>Auto</option>
+            <option value="fast">Fast (Nano)</option>
+            <option value="deep">Deep (Ultra)</option>
+          </select>
+        </label>
+      </div>
+      <div id="chatLog" class="chat-log"></div>
+      <div class="chat-input">
+        <input id="question" placeholder="Ask anything about the page…" autocomplete="off">
+        <button id="askBtn">Ask</button>
+      </div>
+    </section>
+  </div>
+
+  <footer>Built for the Nebius x NVIDIA Global AI Hackathon · runs on NVIDIA Nemotron via Nebius Token Factory</footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

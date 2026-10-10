@@ -1,0 +1,15 @@
+[Unit]
+Description=SiteSage - chat with any website (Nebius x NVIDIA hackathon demo)
+After=network.target
+
+[Service]
+Type=simple
+User=azureuser
+WorkingDirectory=/opt/sitesage
+EnvironmentFile=/etc/sitesage.env
+ExecStart=/opt/sitesage/.venv/bin/uvicorn backend.app:app --host 0.0.0.0 --port 8001
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
